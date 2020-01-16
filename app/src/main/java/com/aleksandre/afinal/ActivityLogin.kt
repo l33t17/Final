@@ -15,6 +15,7 @@ class ActivityLogin : AppCompatActivity() {
 
         checkLogin()
         loginBtn.setOnClickListener { logIn() }
+        gosignup.setOnClickListener { startActivity(Intent(this, ActivityRegister::class.java)) }
     }
 
     private fun logIn()
