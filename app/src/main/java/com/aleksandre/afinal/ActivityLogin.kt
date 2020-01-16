@@ -33,7 +33,7 @@ class ActivityLogin : AppCompatActivity() {
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
                     } else {
-                        Toast.makeText(this, it.result.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, it.exeption.toString(), Toast.LENGTH_LONG).show()
                     }
                 }
         } else {
@@ -43,7 +43,9 @@ class ActivityLogin : AppCompatActivity() {
 
     private fun checkLogin()
     {
-        if(auth.currentUser != null)
+        if(auth.currentUser != null){
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 }
